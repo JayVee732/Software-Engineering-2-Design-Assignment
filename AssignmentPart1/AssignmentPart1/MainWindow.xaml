@@ -8,12 +8,27 @@
         Title="MainWindow" Height="591.5" Width="894" Loaded="Window_Loaded">
     <Grid>
         <ListBox HorizontalAlignment="Left" Height="202" Margin="70,336,0,0" VerticalAlignment="Top" Width="756"/>
-        <TextBox HorizontalAlignment="Left" Height="22" Margin="712,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="22" Margin="710,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="22" Margin="714,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="22" Margin="709,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <ComboBox Name="cbxPlayerSelection" HorizontalAlignment="Left" Margin="716,20,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Person Adding:" HorizontalAlignment="Left" Margin="598,19,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="Player_Surname" HorizontalAlignment="Left" Height="22" Margin="393,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Player_Number" HorizontalAlignment="Left" Height="22" Margin="393,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Player_Nationality" HorizontalAlignment="Left" Height="22" Margin="393,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Adding Players" FontWeight="Bold" FontSize="15" HorizontalAlignment="Left" Margin="334,21,0,0" VerticalAlignment="Top" Width="133"/>
+        <Label x:Name="player_Surname" Content="Surname: " HorizontalAlignment="Left" Margin="287,57,0,0" VerticalAlignment="Top" Width="78"/>
+        <Label x:Name="player_Nationality" Content="Nationality: " HorizontalAlignment="Left" Margin="287,83,0,0" VerticalAlignment="Top" Width="78"/>
+        <Label x:Name="player_Number" Content="Shirt Number: " HorizontalAlignment="Left" Margin="287,114,0,0" VerticalAlignment="Top" Width="95"/>
+
+        <Label Content="Adding Manager" FontWeight="Bold" FontSize="15" HorizontalAlignment="Left" Margin="659,21,0,0" VerticalAlignment="Top" Width="133"/>
+        <TextBox Name="Manager_Name" HorizontalAlignment="Left" Height="22" Margin="706,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Manager_Nationality" HorizontalAlignment="Left" Height="22" Margin="706,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="manager_Name" Content="Name: " HorizontalAlignment="Left" Margin="623,57,0,0" VerticalAlignment="Top" Width="78"/>
+        <Label x:Name="manager_Nationality" Content="Nationality: " HorizontalAlignment="Left" Margin="623,83,0,0" VerticalAlignment="Top" Width="78"/>
+
+        <Label Content="Adding Teams" FontWeight="Bold" FontSize="15" HorizontalAlignment="Left" Margin="92,21,0,0" VerticalAlignment="Top" Width="133"/>
+        <TextBox Name="Club_Location" HorizontalAlignment="Left" Height="22" Margin="124,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Goal_Difference" HorizontalAlignment="Left" Height="22" Margin="124,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Club_Points" HorizontalAlignment="Left" Height="22" Margin="124,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="Team_Location" Content="Club Location: " HorizontalAlignment="Left" Margin="24,61,0,0" VerticalAlignment="Top" Width="95"/>
+        <Label x:Name="Team_GoalDif" Content="Club Goal Dif: " HorizontalAlignment="Left" Margin="24,88,0,0" VerticalAlignment="Top" Width="95"/>
+        <Label x:Name="Team_Points" Content="Club Points: " HorizontalAlignment="Left" Margin="24,114,0,0" VerticalAlignment="Top" Width="95"/>
 
     </Grid>
 </Window>
