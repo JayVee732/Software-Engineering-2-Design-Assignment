@@ -80,7 +80,7 @@ namespace AssignmentPart1
         }
     }
 
-    class Manager : Team
+    public class Manager : Team
     {
         public string ManagerName { get; set; }
         public string ManagerNationality { get; set; }
@@ -89,10 +89,16 @@ namespace AssignmentPart1
         {
         }
 
-        public Manager(string managerName, string managerNationality)
+        public Manager(string teamName, string managerName, string managerNationality)
         {
+            this.TeamName = teamName;
             this.ManagerName = managerName;
             this.ManagerNationality = managerNationality;
+        }
+
+        public override string ToString()
+        {
+            return "Team Name: " + TeamName + "\nManagerName: " + ManagerName;
         }
     }
 }
