@@ -21,6 +21,7 @@ namespace AssignmentPart1
     public partial class MainWindow : Window
     {
         public List<Team> teamDisplay = new List<Team>();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -29,10 +30,6 @@ namespace AssignmentPart1
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //string[] playerType = { "Make A Selection", "Football Player", "Manager" };
-            //cbxPlayerSelection.ItemsSource = playerType;
-            //cbxPlayerSelection.SelectedIndex = 0;
-
             Team t1 = new Team() { TeamName = "Heart", GoalDifference = 9, Points = 6 };
             Team t2 = new Team() { TeamName = "ManU", GoalDifference = 4, Points = 2435 };
             Team t3 = new Team() { TeamName = "Live", GoalDifference = 89, Points = 34 };
@@ -50,10 +47,9 @@ namespace AssignmentPart1
         {
             lbxDisplay.ItemsSource = "";
 
-            teamDisplay.Add(new Team() { TeamName = tbxTeamName.ToString(), GoalDifference = int.Parse(tbxGoalDifference.ToString()), Points = int.Parse(tbxClubPoints.ToString()) });
+            teamDisplay.Add(new Team() { TeamName = tbxTeamName.Text, GoalDifference = int.Parse(tbxGoalDifference.Text), Points = int.Parse(tbxClubPoints.Text) });
 
             lbxDisplay.ItemsSource = teamDisplay;
         }
-        
     }
 }
