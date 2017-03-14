@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AssignmentPart1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="591.5" Width="894" Loaded="Window_Loaded">
     <Grid>
-        
+        <ListBox HorizontalAlignment="Left" Height="202" Margin="70,336,0,0" VerticalAlignment="Top" Width="756"/>
+        <TextBox HorizontalAlignment="Left" Height="22" Margin="712,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="22" Margin="710,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="22" Margin="714,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="22" Margin="709,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox Name="cbxPlayerSelection" HorizontalAlignment="Left" Margin="716,20,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Person Adding:" HorizontalAlignment="Left" Margin="598,19,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>

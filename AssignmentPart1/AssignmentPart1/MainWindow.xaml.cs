@@ -24,5 +24,12 @@ namespace AssignmentPart1
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            string[] playerType = { "Make A Selection", "Football Player", "Manager" };
+            cbxPlayerSelection.ItemsSource = playerType;
+            cbxPlayerSelection.SelectedIndex = 0;
+        }
     }
 }
