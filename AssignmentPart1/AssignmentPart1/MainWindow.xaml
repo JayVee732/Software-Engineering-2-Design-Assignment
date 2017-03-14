@@ -17,8 +17,8 @@
         <Label x:Name="player_Number" Content="Shirt Number: " HorizontalAlignment="Left" Margin="287,114,0,0" VerticalAlignment="Top" Width="95"/>
 
         <Label Content="Adding Manager" FontWeight="Bold" FontSize="15" HorizontalAlignment="Left" Margin="659,21,0,0" VerticalAlignment="Top" Width="133"/>
-        <TextBox Name="tbxMangerName" HorizontalAlignment="Left" Height="22" Margin="706,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="tbxManagerNationality" HorizontalAlignment="Left" Height="22" Margin="706,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Manager_Name" HorizontalAlignment="Left" Height="22" Margin="706,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Manager_Nationality" HorizontalAlignment="Left" Height="22" Margin="706,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="manager_Name" Content="Name: " HorizontalAlignment="Left" Margin="623,57,0,0" VerticalAlignment="Top" Width="78"/>
         <Label x:Name="manager_Nationality" Content="Nationality: " HorizontalAlignment="Left" Margin="623,83,0,0" VerticalAlignment="Top" Width="78"/>
 
@@ -30,10 +30,6 @@
         <Label x:Name="Team_GoalDif" Content="Club Goal Dif: " HorizontalAlignment="Left" Margin="24,88,0,0" VerticalAlignment="Top" Width="95"/>
         <Label x:Name="Team_Points" Content="Club Points: " HorizontalAlignment="Left" Margin="24,114,0,0" VerticalAlignment="Top" Width="95"/>
         <Button x:Name="btnAddTeam" Content="Add Team" HorizontalAlignment="Left" Margin="169,159,0,0" VerticalAlignment="Top" Width="75" Click="btnAddTeam_Click"/>
-        <Button x:Name="btnAddManager" Content="Add Manager" HorizontalAlignment="Left" Margin="722,160,0,0" VerticalAlignment="Top" Width="94" Click="btnAddManager_Click" />
-        <TextBox x:Name="tbxManagerTeam" HorizontalAlignment="Left" Height="24" Margin="706,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label" Content="Team:" HorizontalAlignment="Left" Margin="625,117,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="lbxManagerDisplay" HorizontalAlignment="Left" Height="138" Margin="590,188,0,0" VerticalAlignment="Top" Width="253"/>
 
     </Grid>
 </Window>
