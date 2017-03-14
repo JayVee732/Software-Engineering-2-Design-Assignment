@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AssignmentPart1
 {
-    abstract class Football
+    abstract public class Football
     {
         public string TeamName { get; set; }
 
@@ -41,37 +41,38 @@ namespace AssignmentPart1
     }
 
     //All of the data that is used for the team and the manager class
-    class Teams : Football
+    public class Team : Football
     {
-        public string ClubLocation { get; set; }
         public int GoalDifference { get; set; }
         public int Points { get; set; }
-        public int TablePosition { get; set; }
 
-        public Teams()
+        public Team()
         {
         }
 
-        public Teams(string clubLocation, int goalDifference, int points, int tablePosition)
+        public Team(int goalDifference, int points)
         {
-            this.ClubLocation = clubLocation;
             this.GoalDifference = goalDifference;
-            this.Points = points;
-            this.TablePosition = tablePosition;
+            this.Points = points;;
+        }
+
+        public override string ToString()
+        {
+            return "Team Name: " + TeamName + "\nGoal Difference: " + GoalDifference + "\nPoints: " + Points;
         }
     }
 
-    class Results : Teams
+    class Result : Team
     {
         public int Wins { get; set; }
         public int Draws { get; set; }
         public int Losses { get; set; }
 
-        public Results()
+        public Result()
         {
         }
 
-        public Results(int wins, int draws, int losses)
+        public Result(int wins, int draws, int losses)
         {
             this.Wins = wins;
             this.Draws = draws;
@@ -79,16 +80,16 @@ namespace AssignmentPart1
         }
     }
 
-    class Managers : Teams
+    class Manager : Team
     {
         public string ManagerName { get; set; }
         public string ManagerNationality { get; set; }
 
-        public Managers()
+        public Manager()
         {
         }
 
-        public Managers(string managerName, string managerNationality)
+        public Manager(string managerName, string managerNationality)
         {
             this.ManagerName = managerName;
             this.ManagerNationality = managerNationality;
