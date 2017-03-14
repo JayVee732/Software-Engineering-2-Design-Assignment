@@ -77,7 +77,7 @@ namespace AssignmentPart1
 
             }
 
-            //Commits2
+            //Commits
             lbxManagerDisplay.ItemsSource = managerList;
         }
     }
