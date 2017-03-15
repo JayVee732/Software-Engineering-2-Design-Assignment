@@ -35,15 +35,17 @@ namespace AssignmentPart1
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             //Default teams, will change later to reflect Premier League
-            Team t1 = new Team() { TeamName = "Heart", GoalDifference = 9, Points = 6 };
-            Team t2 = new Team() { TeamName = "ManU", GoalDifference = 4, Points = 2435 };
-            Team t3 = new Team() { TeamName = "Live", GoalDifference = 89, Points = 34 };
-            Team t4 = new Team() { TeamName = "Arse", GoalDifference = 420, Points = 987234 };
+            Team t1 = new Team() { TeamName = "Liverpool", GoalDifference = 9, Points = 6 };
+            Team t2 = new Team() { TeamName = "Manchester United", GoalDifference = 4, Points = 2435 };
+            Team t3 = new Team() { TeamName = "Arsenal", GoalDifference = 89, Points = 34 };
+            Team t4 = new Team() { TeamName = "Chelsea", GoalDifference = 420, Points = 987234 };
+            Team t5 = new Team() { TeamName = "Norwich", GoalDifference = 420, Points = 987234 };
 
             teamList.Add(t1);
             teamList.Add(t2);
             teamList.Add(t3);
             teamList.Add(t4);
+            teamList.Add(t5);
 
             lbxDisplay.ItemsSource = teamList;
         }
@@ -77,6 +79,10 @@ namespace AssignmentPart1
 
             }
 
+            tbxMangerName.Text = String.Empty;
+            tbxManagerNationality.Text = String.Empty;
+            tbxManagerTeam.Text = String.Empty;
+            
             lbxManagerDisplay.ItemsSource = managerList;
         }
 
@@ -84,15 +90,14 @@ namespace AssignmentPart1
         {
             Manager selectedManager = lbxManagerDisplay.SelectedItem as Manager;
 
-                MessageBoxResult messageBoxResult = MessageBox.Show("Are you sure you want to remove this manager?", "Delete Manager?", MessageBoxButton.YesNo);
-                if (messageBoxResult == MessageBoxResult.Yes)
+            MessageBoxResult messageBoxResult = MessageBox.Show("Are you sure you want to remove this manager?", "Delete Manager?", MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                if (selectedManager != null)
                 {
-                    if (selectedManager != null)
-                    {
-                        managerList.Remove(selectedManager);
-                        lbxManagerDisplay.ItemsSource = "";
-                        lbxManagerDisplay.ItemsSource = managerList;
-                    }
+                    managerList.Remove(selectedManager);
+                    lbxManagerDisplay.ItemsSource = "";
+                    lbxManagerDisplay.ItemsSource = managerList;
                 }
             }
         }
