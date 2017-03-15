@@ -77,8 +77,24 @@ namespace AssignmentPart1
 
             }
 
-            //Commits
             lbxManagerDisplay.ItemsSource = managerList;
+        }
+
+        private void btnRemoveManager_Click(object sender, RoutedEventArgs e)
+        {
+            Manager selectedManager = lbxManagerDisplay.SelectedItem as Manager;
+
+                MessageBoxResult messageBoxResult = MessageBox.Show("Are you sure you want to remove this manager?", "Delete Manager?", MessageBoxButton.YesNo);
+                if (messageBoxResult == MessageBoxResult.Yes)
+                {
+                    if (selectedManager != null)
+                    {
+                        managerList.Remove(selectedManager);
+                        lbxManagerDisplay.ItemsSource = "";
+                        lbxManagerDisplay.ItemsSource = managerList;
+                    }
+                }
+            }
         }
     }
 }

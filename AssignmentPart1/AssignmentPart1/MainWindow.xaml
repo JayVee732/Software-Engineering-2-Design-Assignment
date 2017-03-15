@@ -34,6 +34,7 @@
         <TextBox x:Name="tbxManagerTeam" HorizontalAlignment="Left" Height="24" Margin="706,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="label" Content="Team:" HorizontalAlignment="Left" Margin="625,117,0,0" VerticalAlignment="Top"/>
         <ListBox x:Name="lbxManagerDisplay" HorizontalAlignment="Left" Height="138" Margin="590,188,0,0" VerticalAlignment="Top" Width="253"/>
+        <Button x:Name="btnRemoveManager" Content="Remove Manager" HorizontalAlignment="Left" Margin="604,160,0,0" VerticalAlignment="Top" Width="106" Click="btnRemoveManager_Click"/>
 
     </Grid>
 </Window>
