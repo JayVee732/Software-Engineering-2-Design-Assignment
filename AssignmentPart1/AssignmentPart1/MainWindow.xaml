@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="591.5" Width="894" Loaded="Window_Loaded">
     <Grid>
-        <ListBox Name="lbxDisplay" HorizontalAlignment="Left" Height="202" Margin="70,336,0,0" VerticalAlignment="Top" Width="756"/>
+        <ListBox Name="lbxDisplay" HorizontalAlignment="Left" Height="321" Margin="24,231,0,0" VerticalAlignment="Top" Width="278" SelectionChanged="lbxDisplay_SelectionChanged"/>
         <TextBox Name="Player_Surname" HorizontalAlignment="Left" Height="22" Margin="393,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="Player_Number" HorizontalAlignment="Left" Height="22" Margin="393,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="Player_Nationality" HorizontalAlignment="Left" Height="22" Margin="393,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
@@ -30,6 +30,9 @@
         <Label x:Name="Team_GoalDif" Content="Club Goal Dif: " HorizontalAlignment="Left" Margin="24,88,0,0" VerticalAlignment="Top" Width="95"/>
         <Label x:Name="Team_Points" Content="Club Points: " HorizontalAlignment="Left" Margin="24,114,0,0" VerticalAlignment="Top" Width="95"/>
         <Button x:Name="btnAddTeam" Content="Add Team" HorizontalAlignment="Left" Margin="169,159,0,0" VerticalAlignment="Top" Width="75" Click="btnAddTeam_Click"/>
+        <Button x:Name="btn_Players" Content="Display Team" HorizontalAlignment="Left" Margin="377,159,0,0" VerticalAlignment="Top" Width="75"/>
+        <ListBox x:Name="listBox_Players" HorizontalAlignment="Left" Height="321" Margin="334,231,0,0" VerticalAlignment="Top" Width="276"/>
+
 
     </Grid>
 </Window>
