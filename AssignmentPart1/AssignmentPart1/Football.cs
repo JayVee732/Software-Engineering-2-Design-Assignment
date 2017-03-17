@@ -53,7 +53,7 @@ namespace AssignmentPart1
         public Team(int goalDifference, int points)
         {
             this.GoalDifference = goalDifference;
-            this.Points = points;;
+            this.Points = points; ;
         }
 
         public override string ToString()
@@ -101,4 +101,55 @@ namespace AssignmentPart1
             return "Team Name: " + TeamName + "\nManagerName: " + ManagerName;
         }
     }
+
+    //public abstract class Person
+    //{
+    //    public string FirstName { get; set; }
+    //    public string Surname { get; set; }
+    //    public string Nationality { get; set; }
+    //    public int Age { get; set; }
+
+    //    public Person()
+    //    {
+
+    //    }
+
+    //    public Person(string firstName, string surname, string nationality, int age)
+    //    {
+    //        this.FirstName = firstName;
+    //        this.Surname = surname;
+    //        this.Nationality = nationality;
+    //        this.Age = age;
+    //    }
+    //}
+
+    //class Player : Person
+    //{
+    //    public string ShirtNumber { get; set; }
+
+    //    public Player()
+    //    {
+
+    //    }
+
+    //    public Player(string shirtNumber)
+    //    {
+    //        this.ShirtNumber = shirtNumber;
+    //    }
+    //}
+
+    //class Manager : Person
+    //{
+    //    public string Team { get; set; }
+
+    //    public Manager()
+    //    {
+
+    //    }
+
+    //    public Manager(string team)
+    //    {
+    //        this.Team = team;
+    //    }
+    //}
 }
