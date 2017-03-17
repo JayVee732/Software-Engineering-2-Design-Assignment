@@ -53,7 +53,7 @@ namespace AssignmentPart1
         public Team(int goalDifference, int points)
         {
             this.GoalDifference = goalDifference;
-            this.Points = points; ;
+            this.Points = points;
         }
 
         public override string ToString()
@@ -98,7 +98,7 @@ namespace AssignmentPart1
 
         public override string ToString()
         {
-            return "Team Name: " + TeamName + "\nManagerName: " + ManagerName;
+            return "Manager Name: " + ManagerName + "\nTeam Name: " + TeamName + "\nManager Nationality: " + ManagerNationality;
         }
     }
 

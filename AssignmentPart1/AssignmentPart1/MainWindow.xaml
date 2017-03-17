@@ -35,6 +35,8 @@
         <Label x:Name="label" Content="Team:" HorizontalAlignment="Left" Margin="625,117,0,0" VerticalAlignment="Top"/>
         <ListBox x:Name="lbxManagerDisplay" HorizontalAlignment="Left" Height="138" Margin="590,188,0,0" VerticalAlignment="Top" Width="253"/>
         <Button x:Name="btnRemoveManager" Content="Remove Manager" HorizontalAlignment="Left" Margin="604,160,0,0" VerticalAlignment="Top" Width="106" Click="btnRemoveManager_Click"/>
+        <Button Name="btnLoad" Content="Load Data" HorizontalAlignment="Left" Margin="70,306,0,0" VerticalAlignment="Top" Width="75" Click="btnLoad_Click"/>
+        <Button Name="btnSave" Content="Save Data" HorizontalAlignment="Left" Margin="195,306,0,0" VerticalAlignment="Top" Width="75" Click="btnSave_Click"/>
 
     </Grid>
 </Window>

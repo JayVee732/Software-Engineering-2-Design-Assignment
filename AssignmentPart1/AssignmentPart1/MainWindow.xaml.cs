@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,17 +36,17 @@ namespace AssignmentPart1
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             //Default teams, will change later to reflect Premier League
-            Team t1 = new Team() { TeamName = "Liverpool", GoalDifference = 9, Points = 6 };
-            Team t2 = new Team() { TeamName = "Manchester United", GoalDifference = 4, Points = 2435 };
-            Team t3 = new Team() { TeamName = "Arsenal", GoalDifference = 89, Points = 34 };
-            Team t4 = new Team() { TeamName = "Chelsea", GoalDifference = 420, Points = 987234 };
-            Team t5 = new Team() { TeamName = "Norwich", GoalDifference = 420, Points = 987234 };
+            //Team t1 = new Team() { TeamName = "Liverpool", GoalDifference = 9, Points = 6 };
+            //Team t2 = new Team() { TeamName = "Manchester United", GoalDifference = 4, Points = 2435 };
+            //Team t3 = new Team() { TeamName = "Arsenal", GoalDifference = 89, Points = 34 };
+            //Team t4 = new Team() { TeamName = "Chelsea", GoalDifference = 420, Points = 987234 };
+            //Team t5 = new Team() { TeamName = "Norwich", GoalDifference = 420, Points = 987234 };
 
-            teamList.Add(t1);
-            teamList.Add(t2);
-            teamList.Add(t3);
-            teamList.Add(t4);
-            teamList.Add(t5);
+            //teamList.Add(t1);
+            //teamList.Add(t2);
+            //teamList.Add(t3);
+            //teamList.Add(t4);
+            //teamList.Add(t5);
 
             lbxDisplay.ItemsSource = teamList;
         }
@@ -100,6 +101,69 @@ namespace AssignmentPart1
                     lbxManagerDisplay.ItemsSource = managerList;
                 }
             }
+        }
+
+        private void btnLoad_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                lbxDisplay.ItemsSource = "";
+                lbxManagerDisplay.ItemsSource = "";
+                managerList.Clear();
+                teamList.Clear();
+
+                //Reading from the file
+                using (StreamReader sr = new StreamReader("footballData.txt"))
+                {
+                    string data = sr.ReadLine();
+
+                    while (data != null)
+                    {
+                        string[] newData = data.Split(',');
+                        string checkData = newData[0];
+
+                        //Checks the data type and makes a new object
+                        switch (checkData)
+                        {
+                            //case "Player":
+                            //    vehicleType.Add(new Car() { Make = newVehicle[1], Model = newVehicle[2], Price = double.Parse(newVehicle[3]), Year = int.Parse(newVehicle[4]), Colour = newVehicle[5], Mileage = int.Parse(newVehicle[6]), Description = newVehicle[7], Image = newVehicle[8], BodyType = newVehicle[9] });
+
+                            //    newVehicle = null;
+                            //    vehicle = sr.ReadLine();
+                            //    break;
+                            case "Manager":
+                                managerList.Add(new Manager() { ManagerName = newData[1], ManagerNationality = newData[2], TeamName = newData[3] });
+
+                                newData = null;
+                                data = sr.ReadLine();
+                                break;
+                            case "Team":
+                                teamList.Add(new Team() { TeamName = newData[1], GoalDifference = int.Parse(newData[2]), Points = int.Parse(newData[3]) });
+
+                                newData = null;
+                                data = sr.ReadLine();
+                                break;
+                        }
+                    }
+                    sr.Close();
+                }
+            }
+
+            catch (FileNotFoundException fnfe)
+            {
+                MessageBox.Show(fnfe.Message);
+            }
+
+            //sorts the teams by points
+            teamList = teamList.OrderBy(o => o.Points).ToList();
+            
+            lbxDisplay.ItemsSource = teamList;
+            lbxManagerDisplay.ItemsSource = managerList;
+        }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
