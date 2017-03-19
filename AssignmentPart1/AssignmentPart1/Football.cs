@@ -22,21 +22,26 @@ namespace AssignmentPart1
         }
     }
 
-    class Player : Football
+    public class Player : Football
     {
         public string PlayerSurname { get; set; }
         public string PlayerNationality { get; set; }
-        public int ShirtNumber { get; set; }
+        public string ShirtNumber { get; set; }
 
         public Player()
         {
         }
 
-        public Player(string playerSurname, string playerNationality, int shirtNumber)
+        public Player(string playerSurname, string playerNationality, string shirtNumber)
         {
             this.PlayerSurname = playerSurname;
             this.PlayerNationality = playerNationality;
             this.ShirtNumber = shirtNumber;
+        }
+
+        public override string ToString()
+        {
+            return "Surname: " + PlayerSurname + "\tNationality: " + PlayerNationality + "\nShirt Number: " + ShirtNumber + "\tTeam: " + TeamName;
         }
     }
 
