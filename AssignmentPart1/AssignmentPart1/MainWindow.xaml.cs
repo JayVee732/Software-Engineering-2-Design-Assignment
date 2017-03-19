@@ -126,12 +126,6 @@ namespace AssignmentPart1
                         //Checks the data type and makes a new object
                         switch (checkData)
                         {
-                            //case "Player":
-                            //    vehicleType.Add(new Car() { Make = newVehicle[1], Model = newVehicle[2], Price = double.Parse(newVehicle[3]), Year = int.Parse(newVehicle[4]), Colour = newVehicle[5], Mileage = int.Parse(newVehicle[6]), Description = newVehicle[7], Image = newVehicle[8], BodyType = newVehicle[9] });
-
-                            //    newVehicle = null;
-                            //    vehicle = sr.ReadLine();
-                            //    break;
                             case "Manager":
                                 managerList.Add(new Manager() { ManagerName = newData[1], ManagerNationality = newData[2], TeamName = newData[3] });
 
