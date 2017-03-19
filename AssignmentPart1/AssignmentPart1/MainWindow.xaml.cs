@@ -23,6 +23,7 @@ namespace AssignmentPart1
     {
         public List<Team> teamList = new List<Team>();
         public List<Manager> managerList = new List<Manager>();
+        List<string> saveDataList = new List<string>();
 
         string team = null;
         string manager = null;
@@ -159,11 +160,6 @@ namespace AssignmentPart1
             
             lbxDisplay.ItemsSource = teamList;
             lbxManagerDisplay.ItemsSource = managerList;
-        }
-
-        private void btnSave_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
