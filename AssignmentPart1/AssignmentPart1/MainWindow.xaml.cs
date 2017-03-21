@@ -275,5 +275,10 @@ namespace AssignmentPart1
             File.WriteAllLines(@"footballData.txt", teamtxt);
             */
         }
+
+        private void btn_Reset_Click(object sender, RoutedEventArgs e)
+        {
+            listBox_Players.ItemsSource = playerList;
+        }
     }
 }
