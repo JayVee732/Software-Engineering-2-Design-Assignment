@@ -4,6 +4,30 @@
              xmlns:local="clr-namespace:AssignmentPart2"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="Label">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="ListBox">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Background" Value="LightGreen" />
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Margin" Value="5" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="Height" Value="32" />
+            <Setter Property="Width" Value="75" />
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="5" />
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="22" />
+            <Setter Property="Width" Value="120" />
+            <Setter Property="HorizontalContentAlignment" Value="Right"/>
+            <Setter Property="Margin" Value="160, 10, 10, 5" />
+        </Style>
     </Application.Resources>
 </Application>
