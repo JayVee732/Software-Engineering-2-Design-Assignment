@@ -23,7 +23,6 @@ namespace AssignmentPart1
     {
         public List<Team> teamList = new List<Team>();
         public List<Manager> managerList = new List<Manager>();
-        List<string> saveDataList = new List<string>();
 
         string team = null;
         string manager = null;
@@ -36,19 +35,6 @@ namespace AssignmentPart1
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //Default teams, will change later to reflect Premier League
-            //Team t1 = new Team() { TeamName = "Liverpool", GoalDifference = 9, Points = 6 };
-            //Team t2 = new Team() { TeamName = "Manchester United", GoalDifference = 4, Points = 2435 };
-            //Team t3 = new Team() { TeamName = "Arsenal", GoalDifference = 89, Points = 34 };
-            //Team t4 = new Team() { TeamName = "Chelsea", GoalDifference = 420, Points = 987234 };
-            //Team t5 = new Team() { TeamName = "Norwich", GoalDifference = 420, Points = 987234 };
-
-            //teamList.Add(t1);
-            //teamList.Add(t2);
-            //teamList.Add(t3);
-            //teamList.Add(t4);
-            //teamList.Add(t5);
-
             lbxDisplay.ItemsSource = teamList;
         }
 
