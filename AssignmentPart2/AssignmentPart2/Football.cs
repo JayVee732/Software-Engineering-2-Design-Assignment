@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AssignmentPart1
+namespace AssignmentPart2
 {
     abstract public class Football
     {

@@ -23,6 +23,10 @@ namespace AssignmentPart1
     {
         public List<Team> teamList = new List<Team>();
         public List<Manager> managerList = new List<Manager>();
+        List<string> saveDataList = new List<string>();
+        public List<Player> playerList = new List<Player>();
+        public List<Player> FilteredplayerList = new List<Player>();
+
 
         string team = null;
         string manager = null;
@@ -35,7 +39,33 @@ namespace AssignmentPart1
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            lbxDisplay.ItemsSource = teamList;
+            //Default teams, will change later to reflect Premier League
+            //Team t1 = new Team() { TeamName = "Liverpool", GoalDifference = 9, Points = 6 };
+            //Team t2 = new Team() { TeamName = "Manchester United", GoalDifference = 4, Points = 2435 };
+            //Team t3 = new Team() { TeamName = "Arsenal", GoalDifference = 89, Points = 34 };
+            //Team t4 = new Team() { TeamName = "Chelsea", GoalDifference = 420, Points = 987234 };
+            //Team t5 = new Team() { TeamName = "Norwich", GoalDifference = 420, Points = 987234 };
+
+            /* Player p1 = new Player() { TeamName = "Liverpool", PlayerSurname = "Keane", PlayerNationality = "Irish", ShirtNumber = "5" };
+            Player p2 = new Player() { TeamName = "Manchester United", PlayerSurname = "Rooney", PlayerNationality = "English", ShirtNumber = "7" };
+            Player p3 = new Player() { TeamName = "Arsenal", PlayerSurname = "Sanchez", PlayerNationality = "Somethin", ShirtNumber = "9" };
+            Player p4 = new Player() { TeamName = "Chelsea", PlayerSurname = "Drogba", PlayerNationality = "Iduno", ShirtNumber = "6" };
+            Player p5 = new Player() { TeamName = "Norwich", PlayerSurname = "Bolder", PlayerNationality = "RockBased", ShirtNumber = "7" };
+
+            playerList.Add(p1);
+            playerList.Add(p2);
+            playerList.Add(p3);
+            playerList.Add(p4);
+            playerList.Add(p5); */
+
+            //teamList.Add(t1);
+            //teamList.Add(t2);
+            //teamList.Add(t3);
+            //teamList.Add(t4);
+            //teamList.Add(t5);
+
+            //lbxDisplay.ItemsSource = teamList;
+            //listBox_Players.ItemsSource = playerList;
         }
 
         private void btnAddTeam_Click(object sender, RoutedEventArgs e)
@@ -54,7 +84,7 @@ namespace AssignmentPart1
             lbxManagerDisplay.ItemsSource = "";
             team = "";
             manager = "";
-            
+
             foreach (var teamName in teamList)
             {
                 team = teamName.TeamName;
@@ -70,7 +100,7 @@ namespace AssignmentPart1
             tbxMangerName.Text = String.Empty;
             tbxManagerNationality.Text = String.Empty;
             tbxManagerTeam.Text = String.Empty;
-            
+
             lbxManagerDisplay.ItemsSource = managerList;
         }
 
@@ -96,8 +126,10 @@ namespace AssignmentPart1
             {
                 lbxDisplay.ItemsSource = "";
                 lbxManagerDisplay.ItemsSource = "";
+                listBox_Players.ItemsSource = "";
                 managerList.Clear();
                 teamList.Clear();
+                playerList.Clear();
 
                 //Reading from the file
                 using (StreamReader sr = new StreamReader("footballData.txt"))
@@ -124,6 +156,12 @@ namespace AssignmentPart1
                                 newData = null;
                                 data = sr.ReadLine();
                                 break;
+                            case "Player":
+                                playerList.Add(new Player() { TeamName = newData[1], PlayerSurname = (newData[2]), PlayerNationality = (newData[3]), ShirtNumber = (newData[4]) });
+                                newData = null;
+                                data = sr.ReadLine();
+                                break;
+
                         }
                     }
                     sr.Close();
@@ -137,9 +175,110 @@ namespace AssignmentPart1
 
             //sorts the teams by points
             teamList = teamList.OrderBy(o => o.Points).ToList();
-            
+
             lbxDisplay.ItemsSource = teamList;
             lbxManagerDisplay.ItemsSource = managerList;
+            listBox_Players.ItemsSource = playerList;
+        }
+
+        private void btn_AddPlayer_Click(object sender, RoutedEventArgs e)
+        {
+            // Adding a player to the list
+
+            listBox_Players.ItemsSource = "";
+
+            playerList.Add(new Player() { PlayerSurname = txtbox_PlayerTeam.Text, PlayerNationality = Player_Nationality.Text, ShirtNumber = Player_Number.Text, TeamName = txtbox_PlayerTeam.Text });
+
+            Player_Surname.Text = String.Empty;
+            Player_Nationality.Text = String.Empty;
+            Player_Number.Text = String.Empty;
+            txtbox_PlayerTeam.Text = String.Empty;
+
+            listBox_Players.ItemsSource = playerList;
+        }
+
+        private void btn_RemovePlayer_Click(object sender, RoutedEventArgs e)
+        {
+            // Removing a players from the team list with verification
+
+            {
+                Player selectedPlayer = listBox_Players.SelectedItem as Player;
+
+                MessageBoxResult messageBoxResult = MessageBox.Show("Are you sure you want to remove this player?", "Delete Player?", MessageBoxButton.YesNo);
+                if (messageBoxResult == MessageBoxResult.Yes)
+                {
+                    if (selectedPlayer != null)
+                    {
+                        playerList.Remove(selectedPlayer);
+                        listBox_Players.ItemsSource = "";
+                        listBox_Players.ItemsSource = playerList;
+                    }
+                }
+            }
+        }
+
+        private void lbxDisplay_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // When the user clicks on a team in the list the players for that team will display
+            Team selectedTeam = lbxDisplay.SelectedItem as Team;
+
+            if (selectedTeam != null)
+            {
+                listBox_Players.ItemsSource = "";
+                FilteredplayerList.Clear();
+
+                foreach (var item in playerList)
+                {
+                    if (selectedTeam.TeamName == item.TeamName)
+                    {
+                        FilteredplayerList.Add(item);
+
+                    }
+                }
+                listBox_Players.ItemsSource = FilteredplayerList;
+            }
+        }
+
+        private void btn_RemoveTeam_Click(object sender, RoutedEventArgs e)
+        {
+            // Removing a team from the team list with verification
+
+            Team selectedTeam = lbxDisplay.SelectedItem as Team;
+
+            MessageBoxResult messageBoxResult = MessageBox.Show("Are you sure you want to remove this Team?", "Delete Team?", MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                if (selectedTeam != null)
+                {
+                    teamList.Remove(selectedTeam);
+                    lbxDisplay.ItemsSource = "";
+                    lbxDisplay.ItemsSource = teamList;
+                }
+            }
+        }
+
+        private void btn_Save_Click(object sender, RoutedEventArgs e)
+        {
+            /*
+             Here is the attempt at saving the list, I have it almost completed, however the array is out of bounds 
+             
+            string[] teamtxt = new string[teamList.Count];
+            int totalThings = (teamList.Count + playerList.Count + managerList.Count);
+
+            for (int i = 0; i < totalThings; i++)
+            {
+                
+                teamtxt[i] = teamList[i].ToString();
+                teamtxt[i] = playerList[i].ToString();
+                teamtxt[i] = managerList[i].ToString();
+            }
+            File.WriteAllLines(@"footballData.txt", teamtxt);
+            */
+        }
+
+        private void btn_Reset_Click(object sender, RoutedEventArgs e)
+        {
+            listBox_Players.ItemsSource = playerList;
         }
     }
 }
