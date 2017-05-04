@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AssignmentPart2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="591.5" Width="579.204" Loaded="Window_Loaded">
+        Title="Premier League Results" Height="591.5" Width="579.204" Loaded="Window_Loaded">
     <Window.Resources>
         <DataTemplate x:Key="listboxTemplate">
             <Grid>
